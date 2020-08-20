@@ -1,2 +1,2 @@
 # simple-microservice
-Basic microservice in node.js with react
+Basic microservice project in node.js with react
