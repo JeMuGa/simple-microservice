@@ -42,15 +42,20 @@ Activate kubernetes in the settings of docker-hub
 - docker run <image>
 
 ### Kubernetes (inside infra folder)
+#### Pods
 - kubectl apply -f <pod_file_name.yaml>
 - kubectl get pods
 - kubectl exec -it <pod_name> <command>
 - kubectl logs <pod_name>
 - kubectl describe pod <pod_name>
 - kubectl delete pod <pod_name>
-
+#### Deployment
 - kubectl apply -f <deployment_file_name.yaml>
 - kubectl get deployments
 - kubectl describe deployment <deployment_name>
 - kubectl delete deployment <deployment_name>
 - kubectl rollout restart deployment <deployment_name>
+#### Services (to access the service via browser --> localhost:<port>/<service_name>)
+- kubectl apply -f <pod_file_name.yaml>
+- kubectl get services
+- kubectl describe service <service_name>
