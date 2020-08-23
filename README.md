@@ -4,7 +4,7 @@ For learning purposes, a simple event-bus has been manually implemented to manag
 Deployment is done with Docker and Kubernetes in a very basic way in localhost.
 
 ## Recomendations
-Install docker hub on your computer via its (website)[https://www.docker.com/]
+Install docker hub on your computer via its [website](https://www.docker.com/)
 Activate kubernetes in the settings of docker-hub
 
 ## Microservices
