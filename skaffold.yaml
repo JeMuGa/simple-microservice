@@ -1,0 +1,58 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: jnekok/client # Change this image name for the one you created with your docker username  <docker_user_name>/<docker_image_name>
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.js'
+            dest: .
+    - image: jnekok/comments # Change this image name for the one you created with your docker username  <docker_user_name>/<docker_image_name>
+      context: comments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
+    - image: jnekok/events-bus # Change this image name for the one you created with your docker username  <docker_user_name>/<docker_image_name>
+      context: events-bus
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
+    - image: jnekok/moderation # Change this image name for the one you created with your docker username  <docker_user_name>/<docker_image_name>
+      context: moderation
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
+    - image: jnekok/posts # Change this image name for the one you created with your docker username  <docker_user_name>/<docker_image_name>
+      context: posts
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
+    - image: jnekok/query # Change this image name for the one you created with your docker username  <docker_user_name>/<docker_image_name>
+      context: query
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js'
+            dest: .
