@@ -60,3 +60,13 @@ Activate kubernetes in the settings of docker-hub
 - kubectl get services
 - kubectl describe service <service_name>
 - kubectl delete service <service_name>
+
+## Create/Update a pod
+- Step 1: docker build -t <docker_id>/<pod_name> .
+- Step 2: docker push <docker_id>/<pod_name>
+- Step 3(optional): kubectl get pods
+
+## Create/Update a deployment or a service
+- Step 1: kubectl apply -f <deployment_file_name.yaml>
+- Step 2: kubectl rollout restart deployment <deployment_name>
+- Step 3(optional): kubectl get deployments
