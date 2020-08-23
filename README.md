@@ -84,6 +84,3 @@ the hosts file to make the ingress-controller use your peoject instead of the re
 Add the following line to the hosts file (open the file as administrator):
 
 127.0.0.1 my-blog-app.org
-
-### Create/Update a pod
-- Step 1: kubectl apply -f <deployment_file_name.yaml>
