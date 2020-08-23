@@ -41,6 +41,11 @@ Activate kubernetes in the settings of docker-hub
 - docker ps --all
 - docker run <image>
 
+### Create/Update a pod
+- Step 1: docker build -t <docker_id>/<pod_name> .
+- Step 2: docker push <docker_id>/<pod_name>
+- Step 3(optional): kubectl get pods
+
 ### Kubernetes (inside infra/k8s folder)
 #### Pods
 - kubectl apply -f <pod_file_name.yaml>
@@ -61,12 +66,24 @@ Activate kubernetes in the settings of docker-hub
 - kubectl describe service <service_name>
 - kubectl delete service <service_name>
 
-## Create/Update a pod
-- Step 1: docker build -t <docker_id>/<pod_name> .
-- Step 2: docker push <docker_id>/<pod_name>
-- Step 3(optional): kubectl get pods
-
-## Create/Update a deployment or a service
+### Create/Update a deployment or a service
 - Step 1: kubectl apply -f <deployment_file_name.yaml>
 - Step 2: kubectl rollout restart deployment <deployment_name>
 - Step 3(optional): kubectl get deployments
+
+### Ingress-Controller Nginx
+This is an ingress to manage the redirection of the calls to the clusters related to the call.
+To understand this, go to the [website](https://kubernetes.github.io/ingress-nginx/deploy/) and follow the guide
+on how to install it to your kubernetes configuration.
+It's an online tool to make use of the ingress in the oficial website.
+
+#### Routing rules the OS
+Since this project is totally developed for local environment, to make this work a few lines have to be added to
+the hosts file to make the ingress-controller use your peoject instead of the real url provided in the ingress-srv.yaml file.
+
+Add the following line to the hosts file (open the file as administrator):
+
+127.0.0.1 my-blog-app.org
+
+### Create/Update a pod
+- Step 1: kubectl apply -f <deployment_file_name.yaml>
