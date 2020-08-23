@@ -41,7 +41,7 @@ Activate kubernetes in the settings of docker-hub
 - docker ps --all
 - docker run <image>
 
-### Kubernetes (inside infra folder)
+### Kubernetes (inside infra/k8s folder)
 #### Pods
 - kubectl apply -f <pod_file_name.yaml>
 - kubectl get pods
@@ -59,3 +59,4 @@ Activate kubernetes in the settings of docker-hub
 - kubectl apply -f <pod_file_name.yaml>
 - kubectl get services
 - kubectl describe service <service_name>
+- kubectl delete service <service_name>
